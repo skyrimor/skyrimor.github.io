@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta name="baidu-site-verification" content="WJEAqh4Drc"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="skyrimor's blog | java | web | skyrimor"><title>关于并发bug的源头 | skyrimor</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.1"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/3.0.3/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">关于并发bug的源头</h1><a id="logo" href="/.">skyrimor</a><p class="description">我从昨夜梦中来</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/instagram/"><i class="fa fa-picture-o"> 相册</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">关于并发bug的源头</h1><div class="post-meta">Apr 22, 2019<span> | </span><span class="category"><a href="/categories/求知/">求知</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><a data-disqus-identifier="2019/04/22/关于并发问题的源头/" href="/2019/04/22/关于并发问题的源头/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><a id="more"></a>
+<p>今天看到一个帖子，<a href="https://juejin.im/post/5c8c585be51d45164957ebfa" target="_blank" rel="noopener">你知道并发Bug的源头是什么吗？</a></p>
+<p>其中的<a href="https://blog.csdn.net/u010523967/article/details/88125293" target="_blank" rel="noopener">解释</a>很有意思，总结起来有三点：</p>
+<ul>
+<li><p>缓存导致的可见性问题</p>
+<p>一个线程对共享变量的修改，另外一个线程能够立刻看到，我们称为可见性。在多核CPU上，线程A使用线程 A 操作的是CPU-1 上的缓存，而线程B操作的是CPU-2上的缓存，这是A对V的操作，就不具备可见性</p>
+</li>
+<li>线程切换带来的原子性问题</li>
+<li>编译优化带来的有序性问题</li>
+</ul>
+<p>要理解这些，还要了解一些关于电脑的基本知识。我们的电脑包含数据操作的有CPU、内存、IO，其中执行速度上CPU&gt;内存&gt;IO。在执行一个程序时，系统首先读取硬盘数据到内存，然后CPU会操作内存数据。然而CPU的速度远大于内存，所以会用到CPU缓存中，正是这个缓存才是源头。</p>
+<p>看完大概有一个概念了，但也产生了一个疑问，为什么CPU的速度远大于内存？</p>
+<p>找了下大概的解释（摘自<a href="http://www.ruanyifeng.com/blog/2013/10/register.html" target="_blank" rel="noopener">阮一峰的网络日志</a>）：</p>
+<h5 id="原因一：距离不同"><a href="#原因一：距离不同" class="headerlink" title="原因一：距离不同"></a>原因一：距离不同</h5><p>内存离CPU比较远，所以要耗费更长的时间读取；距离虽然不是主要因素，但还是距离传输是影响速度的，而且对于PC的影响要大于移动端的，因为移动端内存紧挨着内存。</p>
+<h5 id="原因二：硬件设计不同"><a href="#原因二：硬件设计不同" class="headerlink" title="原因二：硬件设计不同"></a>原因二：硬件设计不同</h5><p>内存的设计相对简单，每个位就是一个电容和一个晶体管，而寄存器（中央处理器内的组成部份）设计完全不同，多出好几个电子元件。并且通电以后，寄存器的晶体管一直有电，而内存的晶体管只有用到的才有电，没用到的就没电，这样有利于省电。这些设计上的因素，决定了寄存器比内存读取速度更快。</p>
+<h5 id="原因三：工作方式不同"><a href="#原因三：工作方式不同" class="headerlink" title="原因三：工作方式不同"></a>原因三：工作方式不同</h5><p>寄存器的工作方式很简单，只有两步：（1）找到相关的位，（2）读取这些位。</p>
+<p>内存的工作方式就要复杂得多：</p>
+<p>看完似乎有清楚了一些，但另一个问题出来了，CPU到底是怎么来的呢？</p>
+<p><a href="https://www.zhihu.com/question/23350000" target="_blank" rel="noopener">cpu是怎么制造的?</a></p>
+<p><a href="https://www.zhihu.com/question/26998618?rf=21019431" target="_blank" rel="noopener">芯片里面有几千万的晶体管是怎么实现的？</a></p>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.1" async></script><a data-url="https://skyrimor.cn/2019/04/22/关于并发问题的源头/" data-id="ckd6yhgaq0027kcvudknj4nhw" class="article-share-link">分享到</a><div class="tags"></div><div class="post-nav"><a href="/2020/07/29/Vue-规范/" class="pre">Vue 规范</a><a href="/2019/02/28/博客墙/" class="next">博客墙</a></div><div id="disqus_thread"><script>var disqus_shortname = 'skyrimor';
+var disqus_identifier = '2019/04/22/关于并发问题的源头/';
+var disqus_title = '关于并发bug的源头';
+var disqus_url = 'https://skyrimor.cn/2019/04/22/关于并发问题的源头/';
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//skyrimor.disqus.com/count.js" async></script></div><div id="vcomment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'iGzzJb1Lz3bJVS54b1e47GhO-gzGzoHsz',
+  appKey:'cxmeKgsX0M9IoFTv0GYhOz3A',
+  placeholder:'Just so so',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10'
+})</script></div></div></div><div class="pure-u-1-4"><div id="sidebar"><div class="widget"><a href="https://skyrimor.cn/"><img src="https://tvax1.sinaimg.cn/crop.51.398.1137.1137.180/6814d32dly8fx66na0y1dj21kw16on8n.jpg" alt border="0" style="margin-top:15px; border-radius: 300px;" width="180px" ; height="180px"></a></div><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="https://skyrimor.cn"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-book"> 笔记</i></div><ul></ul><a href="https://skyrimor.cn/oo/" title="oo" target="_blank">oo</a><ul></ul><a href="https://github.com/skyrimor/hexo-maupassant.git" title="hexo-maupassant" target="_blank">hexo-maupassant</a><ul></ul><a href="null" title="null" target="_blank"></a></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/求知/">求知</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">20</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-bar-chart"> 访客统计</i></div><a href="https://s05.flagcounter.com/more/quj"><img src="https://s05.flagcounter.com/count2/quj/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Since 2018.11.12" border="0" style="margin-top:15px;"></a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">skyrimor.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" href="https://skyrimor.cn"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.1" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.1"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.1"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.1"></script></div></body><script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js" async></script></html>
