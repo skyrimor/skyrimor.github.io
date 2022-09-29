@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.skyrimor.cn/2021/01/13/B%E7%AB%99Up/</loc>
+    <lastmod>2022-09-29</lastmod>
+  </url>
+  <url>
     <loc>https://blog.skyrimor.cn/2018/11/03/%E9%9D%92%E6%98%A5/</loc>
     <lastmod>2022-09-26</lastmod>
   </url>
@@ -106,10 +110,6 @@
   </url>
   <url>
     <loc>https://blog.skyrimor.cn/2019/01/31/Git%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2022-09-26</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.skyrimor.cn/2021/01/13/B%E7%AB%99Up/</loc>
     <lastmod>2022-09-26</lastmod>
   </url>
 </urlset> 

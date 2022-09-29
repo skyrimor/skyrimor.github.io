@@ -1,3 +1,4 @@
+https://blog.skyrimor.cn/2021/01/13/B%E7%AB%99Up/
 https://blog.skyrimor.cn/instagram/index.html
 https://blog.skyrimor.cn/about/index.html
 https://blog.skyrimor.cn/2018/11/03/%E9%9D%92%E6%98%A5/
@@ -27,7 +28,6 @@ https://blog.skyrimor.cn/2020/08/31/PicGo/
 https://blog.skyrimor.cn/2022/06/11/LskyPro/
 https://blog.skyrimor.cn/2018/12/29/Hexo%20blog/
 https://blog.skyrimor.cn/2019/01/31/Git%E6%93%8D%E4%BD%9C/
-https://blog.skyrimor.cn/2021/01/13/B%E7%AB%99Up/
 https://blog.skyrimor.cn/
 https://blog.skyrimor.cn/tags/GitHub/
 https://blog.skyrimor.cn/categories/%E6%B1%82%E7%9F%A5/
