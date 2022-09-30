@@ -274,7 +274,7 @@
 
   <url>
     <loc>https://blog.skyrimor.cn/</loc>
-    <lastmod>2022-09-29</lastmod>
+    <lastmod>2022-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -282,7 +282,7 @@
   
   <url>
     <loc>https://blog.skyrimor.cn/tags/GitHub/</loc>
-    <lastmod>2022-09-29</lastmod>
+    <lastmod>2022-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -291,14 +291,14 @@
   
   <url>
     <loc>https://blog.skyrimor.cn/categories/%E6%B1%82%E7%9F%A5/</loc>
-    <lastmod>2022-09-29</lastmod>
+    <lastmod>2022-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.skyrimor.cn/categories/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2022-09-29</lastmod>
+    <lastmod>2022-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
