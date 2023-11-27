@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/13/SC/</loc>
+    <loc>http://blog.skyrimor.cn/2021/01/14/SC/</loc>
     
     <lastmod>2023-11-27</lastmod>
     
@@ -65,15 +65,6 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/instagram/index.html</loc>
-    
-    <lastmod>2023-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.skyrimor.cn/about/index.html</loc>
     
     <lastmod>2023-11-12</lastmod>
@@ -83,7 +74,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/08/%E9%9B%A8%C2%B7%E7%A7%8B/</loc>
+    <loc>http://blog.skyrimor.cn/instagram/index.html</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -93,6 +84,15 @@
   
   <url>
     <loc>http://blog.skyrimor.cn/2018/11/04/%E9%95%BF%E5%A5%94/</loc>
+    
+    <lastmod>2023-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.skyrimor.cn/2018/11/08/%E9%9B%A8%C2%B7%E7%A7%8B/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -173,6 +173,15 @@
   </url>
   
   <url>
+    <loc>http://blog.skyrimor.cn/2018/11/09/%E4%BB%8A%E5%A4%95%E5%85%83%E5%AE%B5/</loc>
+    
+    <lastmod>2023-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.skyrimor.cn/2018/11/01/%E5%8D%91%E5%BE%AE/</loc>
     
     <lastmod>2023-11-12</lastmod>
@@ -191,7 +200,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/09/%E4%BB%8A%E5%A4%95%E5%85%83%E5%AE%B5/</loc>
+    <loc>http://blog.skyrimor.cn/2018/11/01/%E5%9F%8E%E9%87%8C%E4%BA%BA/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -209,7 +218,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/01/%E5%9F%8E%E9%87%8C%E4%BA%BA/</loc>
+    <loc>http://blog.skyrimor.cn/2020/08/01/docsify/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -218,7 +227,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2020/08/01/docsify/</loc>
+    <loc>http://blog.skyrimor.cn/2018/11/10/%E3%80%8A%E7%81%AB%E3%80%8B/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -237,15 +246,6 @@
   
   <url>
     <loc>http://blog.skyrimor.cn/2018/11/01/%E4%B9%B1/</loc>
-    
-    <lastmod>2023-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.skyrimor.cn/2018/11/10/%E3%80%8A%E7%81%AB%E3%80%8B/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
