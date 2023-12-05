@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/09/O-Y/</loc>
-    
-    <lastmod>2023-12-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.skyrimor.cn/2021/01/13/B%E7%AB%99Up/</loc>
     
     <lastmod>2023-11-28</lastmod>
@@ -92,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/03/%E9%9D%92%E6%98%A5/</loc>
+    <loc>http://blog.skyrimor.cn/2018/11/08/%E9%9B%A8%C2%B7%E7%A7%8B/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -101,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/08/%E9%9B%A8%C2%B7%E7%A7%8B/</loc>
+    <loc>http://blog.skyrimor.cn/2018/11/03/%E9%9D%92%E6%98%A5/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -119,7 +110,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/06/%E6%B5%B7%E7%8B%BC/</loc>
+    <loc>http://blog.skyrimor.cn/2018/11/11/%E6%9C%9B%E9%AC%BC/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -128,7 +119,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/11/%E6%9C%9B%E9%AC%BC/</loc>
+    <loc>http://blog.skyrimor.cn/2018/11/06/%E6%B5%B7%E7%8B%BC/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -173,7 +164,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/01/%E5%8D%91%E5%BE%AE/</loc>
+    <loc>http://blog.skyrimor.cn/2018/11/09/%E4%BB%8A%E5%A4%95%E5%85%83%E5%AE%B5/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -182,7 +173,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/09/%E4%BB%8A%E5%A4%95%E5%85%83%E5%AE%B5/</loc>
+    <loc>http://blog.skyrimor.cn/2018/11/01/%E5%8D%91%E5%BE%AE/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -227,15 +218,6 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2021/01/22/mysql_markdown/</loc>
-    
-    <lastmod>2023-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.skyrimor.cn/2018/11/10/%E3%80%8A%E7%81%AB%E3%80%8B/</loc>
     
     <lastmod>2023-11-12</lastmod>
@@ -245,7 +227,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/01/%E4%BA%91%E4%B8%8A%E9%9D%A2%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
+    <loc>http://blog.skyrimor.cn/2021/01/22/mysql_markdown/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -255,6 +237,15 @@
   
   <url>
     <loc>http://blog.skyrimor.cn/2018/11/01/%E4%B9%B1/</loc>
+    
+    <lastmod>2023-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.skyrimor.cn/2018/11/01/%E4%BA%91%E4%B8%8A%E9%9D%A2%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
