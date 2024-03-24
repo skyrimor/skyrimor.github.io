@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.skyrimor.cn/2021/01/13/B%E7%AB%99Up/</loc>
+    <loc>http://blog.skyrimor.cn/2021/01/13/B-Up/</loc>
     
-    <lastmod>2023-11-28</lastmod>
+    <lastmod>2024-03-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/about/index.html</loc>
+    <loc>http://blog.skyrimor.cn/instagram/index.html</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/instagram/index.html</loc>
+    <loc>http://blog.skyrimor.cn/about/index.html</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/06/%E6%B5%B7%E7%8B%BC/</loc>
+    <loc>http://blog.skyrimor.cn/2018/11/05/%E9%81%A5%E8%AE%B0%E6%A2%A6/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -137,7 +137,7 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/05/%E9%81%A5%E8%AE%B0%E6%A2%A6/</loc>
+    <loc>http://blog.skyrimor.cn/2018/11/06/%E6%B5%B7%E7%8B%BC/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -218,15 +218,6 @@
   </url>
   
   <url>
-    <loc>http://blog.skyrimor.cn/2018/11/10/%E3%80%8A%E7%81%AB%E3%80%8B/</loc>
-    
-    <lastmod>2023-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.skyrimor.cn/2021/01/22/mysql_markdown/</loc>
     
     <lastmod>2023-11-12</lastmod>
@@ -237,6 +228,15 @@
   
   <url>
     <loc>http://blog.skyrimor.cn/2018/11/01/%E4%B9%B1/</loc>
+    
+    <lastmod>2023-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.skyrimor.cn/2018/11/10/%E3%80%8A%E7%81%AB%E3%80%8B/</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -274,7 +274,7 @@
 
   <url>
     <loc>http://blog.skyrimor.cn/</loc>
-    <lastmod>2023-12-05</lastmod>
+    <lastmod>2024-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -282,7 +282,7 @@
   
   <url>
     <loc>http://blog.skyrimor.cn/tags/GitHub/</loc>
-    <lastmod>2023-12-05</lastmod>
+    <lastmod>2024-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -291,14 +291,14 @@
   
   <url>
     <loc>http://blog.skyrimor.cn/categories/%E6%B1%82%E7%9F%A5/</loc>
-    <lastmod>2023-12-05</lastmod>
+    <lastmod>2024-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.skyrimor.cn/categories/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2023-12-05</lastmod>
+    <lastmod>2024-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
