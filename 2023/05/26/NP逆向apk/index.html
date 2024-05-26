@@ -6,23 +6,24 @@
 <p>安卓没搞过不太会，网上找了找反编译的教程挺多的，不过都看着很麻烦，试了试不好用。</p>
 <p>最后发现用MT管理器的还行，虽然是手机端的，但看着比较简单方便。</p>
 <p>下载了用了用，结果还得注册，注册了吧修改文件还得是会员才行，…mmp，又开始找MT的破解版…</p>
-<p>找来找去发现NP管理器也一样功能，还是免费的:blush:</p>
+<p>找来找去发现NP管理器，简直是神器，还是免费的:blush:</p>
+<p>大概是3种场景要改的：</p>
 <ul>
-<li><p>找到apk位置，点击apk，会有查看、安装的选项，点击查看</p>
+<li><p>修改文字弹框</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">这种比较简单</span><br><span class="line">1、找到apk位置，点击apk，会有查看、安装的选项，点击查看</span><br><span class="line">2、点击.dex文件，弹框出来打开方式 ，选择dex编辑，选择全部的dex文件</span><br><span class="line">3、搜索，发起新搜索 关键字</span><br><span class="line">4、点击搜索到的结果，进入的是.smail文件，右上点击角操作，可以转为java查看代码逻辑</span><br><span class="line">5、java代码只能看不能修改，修改要返回.smail文件</span><br><span class="line">6、 弹框的逻辑不复杂，直接去掉就行了</span><br><span class="line">7、 一路退出，会自动提示保存，最后自动重新打包apk覆盖原来的</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>点击.dex文件，弹框出来打开方式 ，选择dex编辑，选择全部的dex文件</p>
-</li>
-<li><p>搜索，发起新搜索 关键字</p>
-</li>
-<li><p>点击搜索到的结果，进入的是.smail文件，右上点击角操作，可以转为java查看代码逻辑</p>
-</li>
-<li>java代码只能看不能修改，修改要返回.smail文件</li>
-<li>弹框的逻辑不复杂，直接去掉就行了</li>
-<li>一路退出，会自动提示保存，最后自动重新打包apk覆盖原来的</li>
 </ul>
-<p>还好这个软件没有加固，不然是没法反编译的。而且提示文字是明文，不然估计还得转Unicode</p>
+<ul>
+<li><p>修改开屏广告</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">需要用到activity记录功能</span><br><span class="line">1、打开NP的activity记录功能</span><br><span class="line">2、运行app</span><br><span class="line">3、在NP的activity记录里找到对应的记录，是一个activity路径，点击后复制</span><br><span class="line">4、在AndroidManifest.xml中搜索复制的内容</span><br><span class="line">5、大概了解下AndroidManifest.xml的结构，之所以开屏广告，就是先加载了这个activity再加载了程序入口。</span><br><span class="line">6、所以先复制一份广告的activity，把名称修改为程序入口的activity</span><br><span class="line">7、原广告activity里的init部分删除掉</span><br><span class="line">8、退出保存就行</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改对话弹框</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">类似还有弹出图片</span><br><span class="line">这种没法直接根据文字内容没法搜到，可能还需要抓包啥的，有时间再看看了</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>还好这个软件没有加固，不然还得一顿折腾。而且提示文字是明文，不然估计还得转Unicode</p>
 <p>试了试生成的app没啥问题，挺好用的。</p>
-</div><script type="text/javascript" src="/js/share.js?v=0.0.1" async></script><a data-url="http://blog.skyrimor.cn/2023/05/26/NP逆向apk/" data-id="clwnhbovp0000ywacykhn926h" class="article-share-link">分享到</a><div class="tags"></div><div class="post-nav"><a href="/2022/06/11/LskyPro/" class="next">LskyPro</a></div><div id="disqus_thread"><script>var disqus_shortname = 'skyrimor';
+</div><script type="text/javascript" src="/js/share.js?v=0.0.1" async></script><a data-url="http://blog.skyrimor.cn/2023/05/26/NP逆向apk/" data-id="clwns95ko0021fcac8g43iich" class="article-share-link">分享到</a><div class="tags"></div><div class="post-nav"><a href="/2022/06/11/LskyPro/" class="next">LskyPro</a></div><div id="disqus_thread"><script>var disqus_shortname = 'skyrimor';
 var disqus_identifier = '2023/05/26/NP逆向apk/';
 var disqus_title = 'NP逆向apk';
 var disqus_url = 'http://blog.skyrimor.cn/2023/05/26/NP逆向apk/';
