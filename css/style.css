@@ -1523,11 +1523,11 @@ em.search-keyword {
   margin-right: 11px;
 }
 
-#post-instagram {
-  padding: 30px 40px 30px 40px;
-}
 #post-instagram .article-entry {
   padding-right: 0;
+}
+#post-instagram {
+  padding: 30px 40px 30px 40px;
 }
 
 .instagram {
