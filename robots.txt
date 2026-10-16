@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# 注意：robots.txt 只能"禁止抓取"，不能"禁止收录"。
+# 真正让搜索引擎移除已收录页面的方式是页面里的
+# <meta name="robots" content="noindex, nofollow">
+# 因此这里刻意 Allow，让爬虫能抓到页面中的 noindex 标记。
